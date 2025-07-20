@@ -2,6 +2,8 @@ const getZodiacSign = (birthdate) => {
     const date = new Date(birthdate);
     const day = date.getDate();
     const month = date.getMonth() + 1;
+    console.log(month, day, date);
+    
   
     const zodiac = [
       ["Capricorn", 1, 19], ["Aquarius", 2, 18], ["Pisces", 3, 20],
@@ -10,7 +12,7 @@ const getZodiacSign = (birthdate) => {
       ["Libra", 10, 22], ["Scorpio", 11, 21], ["Sagittarius", 12, 21], ["Capricorn", 12, 31]
     ];
   
-    return zodiac.find(([sign, m, d]) => month === m && day <= d)[0];
+    return zodiac.find(([sign, m, d]) => month <= m && day <= d)[0];
   };
   
   module.exports = { getZodiacSign };
